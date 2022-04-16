@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Layouting</string>
+    <string name="title_movie">The Shawshank Redemption</string>
+    <string name="release_date">12/17/2021</string>
+    <string name="duration">2h 28m</string>
+    <string name="rate_movie">9.8</string>
+    <string name="director">Director :</string>
+    <string name="director_content">Jon Watts</string>
+    <string name="genre_contents">Action, Adventure, Science Fiction</string>
+    <string name="title_cast">Tom Holland</string>
+    <string name="content_cast">Peter Parker / Spider-Man</string>
+    <string name="overview">Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.</string>
+    <string name="top_billed_cast">Top Billed Cast</string>
+</resources>
