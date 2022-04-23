@@ -24,7 +24,8 @@ class MainActivity : AppCompatActivity() {
     private fun setupListener() {
         with(binding){
             btnListMovie.setOnClickListener {
-                startActivity(Intent(this@MainActivity, ListMovieActivity::class.java))
+                val intent = Intent(this@MainActivity, ListMovieActivity::class.java)
+                startActivity(intent)
             }
 
             btnDetailMovie.setOnClickListener {
