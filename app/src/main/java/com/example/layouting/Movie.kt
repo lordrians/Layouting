@@ -15,6 +15,7 @@ data class Movie(
     val genre: String,
     val poster: Int,
     val overview: String,
+    val casts: ArrayList<MovieCast>
 ): Parcelable
 
 

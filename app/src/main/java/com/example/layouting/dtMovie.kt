@@ -105,60 +105,60 @@ class dtMovie {
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
     )
-
-    val listActorName = listOf(
-        "Tobey Maguire",
-        "ABSD",
-        "QEWER",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire",
-        "Tobey Maguire"
-    )
-
-    val listCharName = listOf(
-        "Spider-Man",
-        "Spider-Man 1",
-        "Spider-Man 2",
-        "Spider-Man 3",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man",
-        "Spider-Man"
-    )
-
-    val listPosterCast = listOf(
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast,
-        R.drawable.cast
-    )
+//
+//    val listActorName = listOf(
+//        "Tobey Maguire",
+//        "Robert Pattinson",
+//        "Tom Holland",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire",
+//        "Tobey Maguire"
+//    )
+//
+//    val listCharName = listOf(
+//        "Spider-Man",
+//        "Spider-Man 1",
+//        "Spider-Man 2",
+//        "Spider-Man 3",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man",
+//        "Spider-Man"
+//    )
+//
+//    val listPosterCast = listOf(
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast,
+//        R.drawable.cast
+//    )
 
     fun getMovie(): ArrayList<Movie>{
         val listMovie = ArrayList<Movie>()
@@ -172,10 +172,9 @@ class dtMovie {
                 director = listDirector[position],
                 genre = listGenre[position],
                 poster = listPoster[position],
-                overview = listOverview[position]
+                overview = listOverview[position],
+                casts = getCast(position+1)
             )
-
-
 
             listMovie.add(movie)
         }
@@ -183,18 +182,31 @@ class dtMovie {
         return listMovie
     }
 
-    fun getCast(): ArrayList<MovieCast>{
+    fun getCast(position: Int): ArrayList<MovieCast>{
 
-        val listCast = ArrayList<MovieCast>()
-        for (castPosition in 0..4){
-            val cast = MovieCast(
-                poster = listPosterCast[castPosition],
-                actorName = listActorName[castPosition],
-                charName = listCharName[castPosition]
-            )
-            listCast.add(cast)
+        return when (position){
+            1 -> dtCast.batmanCast
+            2 -> dtCast.spidermanCast
+            3 -> dtCast.turningCast
+            4 -> dtCast.sonicCast
+            5 -> dtCast.yakshaCast
+            6 -> dtCast.oldKnivesCast
+            7 -> dtCast.moonfalCast
+            8 -> dtCast.outfitCast
+            9 -> dtCast.annihilationCast
+            10 -> dtCast.encantoCast
+            else -> ArrayList()
         }
-        return listCast
     }
 
+//    "The Batman",
+//    "Spider-Man: No Way Home",
+//    "Turning Red",
+//    "Sonic the Hedgehog 2",
+//    "Yaksha: Ruthless Operations",
+//    "All the Old Knives",
+//    "Moonfall",
+//    "The Outfit",
+//    "War of the Worlds: Annihilation",
+//    "Encanto"
 }

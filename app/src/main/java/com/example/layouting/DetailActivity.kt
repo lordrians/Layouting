@@ -20,9 +20,7 @@ class DetailActivity : AppCompatActivity() {
 
         val movieData = intent.getParcelableExtra<Movie>("movie_data")
 
-        val movieCast = dtMovie().getCast()
-
-        setupRvCast(movieCast)
+        movieData?.let { setupRvCast(it.casts) }
         fillingData(movieData)
 
     }
@@ -35,7 +33,6 @@ class DetailActivity : AppCompatActivity() {
 
     @SuppressLint("UseCompatLoadingForDrawables")
     private fun fillingData(movieData: Movie?) {
-
 
         movieData?.let { movie ->
             with(binding){

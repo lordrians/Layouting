@@ -32,7 +32,7 @@ class ListMovieActivity : AppCompatActivity() {
         movieAdapter.setClickItemCallback(object : MovieAdapter.OnClickItemCallback{
             override fun onClickItemCallback(movie: Movie) {
                 val intent = Intent(this@ListMovieActivity, DetailActivity::class.java)
-                intent.putExtra("movie_data", movie )
+                intent.putExtra("movie_data", movie)
                 startActivity(intent)
             }
         })
