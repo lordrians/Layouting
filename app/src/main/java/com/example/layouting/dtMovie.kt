@@ -2,7 +2,7 @@ package com.example.layouting
 
 class dtMovie {
 
-    val listTitle = listOf(
+    private val listTitle = listOf(
         "The Batman",
         "Spider-Man: No Way Home",
         "Turning Red",
@@ -15,7 +15,7 @@ class dtMovie {
         "Encanto"
     )
 
-    val listPoster = listOf(
+    private val listPoster = listOf(
         R.drawable.poster_batman_1,
         R.drawable.poster_nwh_2,
         R.drawable.poster_turningred_3,
@@ -28,7 +28,7 @@ class dtMovie {
         R.drawable.poster_encanto_10
     )
 
-    val listReleaseDate = listOf(
+    private val listReleaseDate = listOf(
         "03/02/2022 (ID)",
         "12/17/2021 (US)",
         "03/10/2022 (CZ)",
@@ -41,7 +41,7 @@ class dtMovie {
         "11/24/2021 (US)"
     )
 
-    val listDuration = listOf(
+    private val listDuration = listOf(
         "2h 56m",
         "2h 28m",
         "1h 40m",
@@ -54,7 +54,7 @@ class dtMovie {
         "1h 42m"
     )
 
-    val listRate = listOf(
+    private val listRate = listOf(
         "7,9",
         "8,1",
         "7,5",
@@ -67,7 +67,7 @@ class dtMovie {
         "7,7",
     )
 
-    val listDirector = listOf(
+    private val listDirector = listOf(
         "Matt Reeves",
         "Jon Watts",
         "Domee Shi",
@@ -80,7 +80,7 @@ class dtMovie {
         "Byron Howard"
     )
 
-    val listGenre = listOf(
+    private val listGenre = listOf(
         "Crime, Mystery, Thriller",
         "Action, Adventure, Science Fiction",
         "Animation, Family, Comedy, Fantasy",
@@ -93,7 +93,7 @@ class dtMovie {
         "Animation, Comedy, Family, Fantasy"
     )
 
-    val listOverview = listOf(
+    private val listOverview = listOf(
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
@@ -105,60 +105,6 @@ class dtMovie {
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
         "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
     )
-//
-//    val listActorName = listOf(
-//        "Tobey Maguire",
-//        "Robert Pattinson",
-//        "Tom Holland",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire",
-//        "Tobey Maguire"
-//    )
-//
-//    val listCharName = listOf(
-//        "Spider-Man",
-//        "Spider-Man 1",
-//        "Spider-Man 2",
-//        "Spider-Man 3",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man",
-//        "Spider-Man"
-//    )
-//
-//    val listPosterCast = listOf(
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast,
-//        R.drawable.cast
-//    )
 
     fun getMovie(): ArrayList<Movie>{
         val listMovie = ArrayList<Movie>()
@@ -182,8 +128,9 @@ class dtMovie {
         return listMovie
     }
 
-    fun getCast(position: Int): ArrayList<MovieCast>{
-
+    private fun getCast(position: Int): ArrayList<MovieCast>{
+        //position buat cocokin urutan dari listTitlenya
+        //karna kita belum pake id
         return when (position){
             1 -> dtCast.batmanCast
             2 -> dtCast.spidermanCast
@@ -198,15 +145,4 @@ class dtMovie {
             else -> ArrayList()
         }
     }
-
-//    "The Batman",
-//    "Spider-Man: No Way Home",
-//    "Turning Red",
-//    "Sonic the Hedgehog 2",
-//    "Yaksha: Ruthless Operations",
-//    "All the Old Knives",
-//    "Moonfall",
-//    "The Outfit",
-//    "War of the Worlds: Annihilation",
-//    "Encanto"
 }
