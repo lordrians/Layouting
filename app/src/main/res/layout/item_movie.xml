@@ -48,14 +48,15 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:gravity="center"
+                android:textSize="12sp"
                 tools:text="12/17/2021"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <View
+                android:layout_width="1dp"
+                android:layout_height="match_parent"
                 android:textStyle="bold"
-                android:textSize="16sp"
-                tools:text=" - "/>
+                android:textSize="14sp"
+                android:background="@color/black"/>
 
             <TextView
                 android:id="@+id/tv_duration"
@@ -63,6 +64,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_weight="1"
+                android:textSize="12sp"
                 tools:text="2h 28m"/>
 
         </LinearLayout>
@@ -85,6 +87,7 @@
                 android:layout_marginStart="4dp"
                 android:gravity="center"
                 android:layout_gravity="center"
+                android:textSize="12sp"
                 tools:text="9.8"/>
 
         </LinearLayout>
@@ -98,6 +101,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textSize="12sp"
                 tools:text="Director :"/>
 
             <TextView
@@ -105,6 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="4dp"
+                android:textSize="12sp"
                 tools:text="Jon Watts"/>
 
         </LinearLayout>
@@ -114,6 +119,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
+            android:textSize="12sp"
             tools:text="Action, Adventure, Science Fiction"/>
 
     </LinearLayout>
