@@ -93,6 +93,73 @@ class dtMovie {
         "Animation, Comedy, Family, Fantasy"
     )
 
+    val listOverview = listOf(
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+        "Peter Parker is unmasked and no longer able to separate his normal life from the high-stakes of being a super-hero. When he asks for help from Doctor Strange the stakes become even more dangerous, forcing him to discover what it truly means to be Spider-Man.",
+    )
+
+    val listActorName = listOf(
+        "Tobey Maguire",
+        "ABSD",
+        "QEWER",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire",
+        "Tobey Maguire"
+    )
+
+    val listCharName = listOf(
+        "Spider-Man",
+        "Spider-Man 1",
+        "Spider-Man 2",
+        "Spider-Man 3",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man",
+        "Spider-Man"
+    )
+
+    val listPosterCast = listOf(
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast,
+        R.drawable.cast
+    )
+
     fun getMovie(): ArrayList<Movie>{
         val listMovie = ArrayList<Movie>()
 
@@ -104,13 +171,30 @@ class dtMovie {
                 rate = listRate[position],
                 director = listDirector[position],
                 genre = listGenre[position],
-                poster = listPoster[position]
+                poster = listPoster[position],
+                overview = listOverview[position]
             )
+
+
 
             listMovie.add(movie)
         }
 
         return listMovie
+    }
+
+    fun getCast(): ArrayList<MovieCast>{
+
+        val listCast = ArrayList<MovieCast>()
+        for (castPosition in 0..4){
+            val cast = MovieCast(
+                poster = listPosterCast[castPosition],
+                actorName = listActorName[castPosition],
+                charName = listCharName[castPosition]
+            )
+            listCast.add(cast)
+        }
+        return listCast
     }
 
 }

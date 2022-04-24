@@ -83,7 +83,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/divider" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/tv_rate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -115,6 +115,7 @@
                 app:layout_constraintTop_toTopOf="@+id/textView2" />
 
             <TextView
+                android:id="@+id/tv_genre"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginTop="8dp"
@@ -147,29 +148,39 @@
                 app:layout_constraintStart_toStartOf="@id/iv_poster"
                 android:text="@string/top_billed_cast"/>
 
-            <HorizontalScrollView
-                android:layout_marginTop="16dp"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_cast"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                tools:listitem="@layout/item_cast"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/tv_title_cast"
-                app:layout_constraintStart_toStartOf="@id/iv_poster"
-                app:layout_constraintEnd_toEndOf="@id/tv_title">
+                app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+<!--            <HorizontalScrollView-->
+<!--                android:layout_marginTop="16dp"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/tv_title_cast"-->
+<!--                app:layout_constraintStart_toStartOf="@id/iv_poster"-->
+<!--                app:layout_constraintEnd_toEndOf="@id/tv_title">-->
 
-                    <include
-                        layout="@layout/item_cast"/>
-                    <include
-                        layout="@layout/item_cast"/>
-                    <include
-                        layout="@layout/item_cast"/>
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:orientation="horizontal">-->
 
-                </LinearLayout>
+<!--                    <include-->
+<!--                        layout="@layout/item_cast"/>-->
+<!--                    <include-->
+<!--                        layout="@layout/item_cast"/>-->
+<!--                    <include-->
+<!--                        layout="@layout/item_cast"/>-->
 
-            </HorizontalScrollView>
+<!--                </LinearLayout>-->
+
+<!--            </HorizontalScrollView>-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

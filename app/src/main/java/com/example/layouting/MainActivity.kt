@@ -1,6 +1,7 @@
 package com.example.layouting
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -26,6 +27,12 @@ class MainActivity : AppCompatActivity() {
             btnListMovie.setOnClickListener {
                 val intent = Intent(this@MainActivity, ListMovieActivity::class.java)
                 startActivity(intent)
+
+//                val intent = Intent(Intent.ACTION_VIEW)
+//                val uriData = Uri.parse("tel:(+62)12345789")
+//                intent.data = Uri.parse("https://www.geeksforgeeks.org/difference-between-implicit-intent-and-explicit-intent-in-android")
+//                intent.data = uriData
+//                startActivity(intent)
             }
 
             btnDetailMovie.setOnClickListener {
@@ -34,6 +41,21 @@ class MainActivity : AppCompatActivity() {
 
             btnSecondActivity.setOnClickListener {
                 startActivity(Intent(this@MainActivity, SecondActivity::class.java))
+            }
+
+            btnBrowser.setOnClickListener {
+                val intent = Intent(Intent.ACTION_VIEW)
+                val uriData = Uri.parse("https://developer.android.com/jetpack?gclid=Cj0KCQjw6pOTBhCTARIsAHF23fK70_cAUpbMayYe8pP5_LvKYoJ7jCXKilzibfhsydQWFQH7vd3g4lEaAiF4EALw_wcB&gclsrc=aw.ds")
+                intent.data = uriData
+                startActivity(intent)
+            }
+
+            btnDialPhone.setOnClickListener {
+                val intent = Intent(Intent.ACTION_DIAL)
+                val uriData = Uri.parse("tel:(+62)12345789")
+                intent.data = uriData
+                startActivity(intent)
+
             }
         }
     }

@@ -12,6 +12,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <ImageView
+            android:id="@+id/iv_poster"
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/cast"
@@ -27,6 +28,7 @@
             android:orientation="vertical">
 
             <TextView
+                android:id="@+id/tv_actor_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/title_cast"
@@ -36,6 +38,7 @@
                 android:textColor="@color/black"/>
 
             <TextView
+                android:id="@+id/tv_char_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/content_cast"

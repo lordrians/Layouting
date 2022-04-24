@@ -34,6 +34,19 @@
             android:layout_height="wrap_content"
             android:text="Detail Movie Activity"/>
 
+        <Button
+            android:id="@+id/btn_browser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Browser"/>
+
+
+        <Button
+            android:id="@+id/btn_dial_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To Dial Phone"/>
+
     </LinearLayout>
 
 
