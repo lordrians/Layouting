@@ -5,60 +5,54 @@ import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.layouting.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMainBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setSupportActionBar(binding.toolbar)
 
-        setupListener()
+        Log.d("qwer", "onCreate: First Activity")
 
+        val drawerLayout = binding.drawerLayout
+        val navView = binding.navView
+        val navController = findNavController(R.id.fragment_container)
 
-        Log.d("qwer", "onStart: First Activity")
+        appBarConfiguration = AppBarConfiguration(
+            setOf(R.id.nav_home), drawerLayout
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+        navView.setupWithNavController(navController)
+
     }
 
-    private fun setupListener() {
-        with(binding){
-            btnListMovie.setOnClickListener {
-                val intent = Intent(this@MainActivity, ListMovieActivity::class.java)
-                startActivity(intent)
-
-//                val intent = Intent(Intent.ACTION_VIEW)
-//                val uriData = Uri.parse("tel:(+62)12345789")
-//                intent.data = Uri.parse("https://www.geeksforgeeks.org/difference-between-implicit-intent-and-explicit-intent-in-android")
-//                intent.data = uriData
-//                startActivity(intent)
-            }
-
-            btnDetailMovie.setOnClickListener {
-                startActivity(Intent(this@MainActivity, DetailActivity::class.java))
-            }
-
-            btnSecondActivity.setOnClickListener {
-                startActivity(Intent(this@MainActivity, SecondActivity::class.java))
-            }
-
-            btnBrowser.setOnClickListener {
-                val intent = Intent(Intent.ACTION_VIEW)
-                val uriData = Uri.parse("https://developer.android.com/jetpack?gclid=Cj0KCQjw6pOTBhCTARIsAHF23fK70_cAUpbMayYe8pP5_LvKYoJ7jCXKilzibfhsydQWFQH7vd3g4lEaAiF4EALw_wcB&gclsrc=aw.ds")
-                intent.data = uriData
-                startActivity(intent)
-            }
-
-            btnDialPhone.setOnClickListener {
-                val intent = Intent(Intent.ACTION_DIAL)
-                val uriData = Uri.parse("tel:(+62)12345789")
-                intent.data = uriData
-                startActivity(intent)
-
-            }
-        }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.fragment_container)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+        menu?.clear()
+        return false
+    }
+
 
     override fun onStart() {
         super.onStart()
